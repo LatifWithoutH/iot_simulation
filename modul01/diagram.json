@@ -1,0 +1,782 @@
+{
+  "parts": [
+    {
+      "id": "nodemcu",
+      "type": "nodemcu-v3",
+      "x": -454,
+      "y": 196,
+      "rotate": 270,
+      "flip": false,
+      "color": "",
+      "value": "",
+      "level": 0
+    },
+    {
+      "id": "fan1",
+      "type": "ac-fan",
+      "x": 166,
+      "y": -1023,
+      "rotate": 0,
+      "flip": false,
+      "color": "",
+      "value": "",
+      "level": 0
+    },
+    {
+      "id": "lamp1",
+      "type": "ac-lamp",
+      "x": 819,
+      "y": -521,
+      "rotate": 90,
+      "flip": false,
+      "color": "",
+      "value": "",
+      "level": 0
+    },
+    {
+      "id": "soil1",
+      "type": "soil-moisture",
+      "x": -142,
+      "y": 72,
+      "rotate": 0,
+      "flip": false,
+      "color": "",
+      "value": "",
+      "level": 5
+    },
+    {
+      "id": "dht1",
+      "type": "dht11",
+      "x": -701,
+      "y": -120,
+      "rotate": 270,
+      "flip": false,
+      "color": "",
+      "value": "",
+      "level": 0,
+      "params": {
+        "temperature": 50,
+        "humidity": 60
+      }
+    },
+    {
+      "id": "ldr1",
+      "type": "photoresistor",
+      "x": -696,
+      "y": -242,
+      "rotate": 0,
+      "flip": false,
+      "color": "",
+      "value": "",
+      "level": 1322
+    },
+    {
+      "id": "lcd2",
+      "type": "lcd1602-i2c",
+      "x": -174,
+      "y": -443,
+      "rotate": 0,
+      "flip": false,
+      "color": "green",
+      "value": "",
+      "level": 0
+    },
+    {
+      "id": "ac1",
+      "type": "ac-source",
+      "x": 306,
+      "y": -137,
+      "rotate": 270,
+      "flip": false,
+      "color": "",
+      "value": "",
+      "level": 1
+    },
+    {
+      "id": "pump1",
+      "type": "water-pump",
+      "x": 991,
+      "y": 325,
+      "rotate": 0,
+      "flip": false,
+      "color": "",
+      "value": "",
+      "level": 0
+    },
+    {
+      "id": "relay2",
+      "type": "relay-4ch",
+      "x": 19,
+      "y": -286,
+      "rotate": 0,
+      "flip": false,
+      "color": "",
+      "value": "low",
+      "level": 0
+    },
+    {
+      "id": "adp1",
+      "type": "dc-adaptor",
+      "x": 489,
+      "y": 253,
+      "rotate": 0,
+      "flip": false,
+      "color": "",
+      "value": "12",
+      "level": 0
+    },
+    {
+      "id": "d1",
+      "type": "diode",
+      "x": 745,
+      "y": 141,
+      "rotate": 0,
+      "flip": false,
+      "color": "",
+      "value": "",
+      "level": 0
+    }
+  ],
+  "wires": [
+    {
+      "id": "w1",
+      "from": {
+        "partId": "relay2",
+        "pin": "GND"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "GND.3"
+      },
+      "color": "#1c1c1c",
+      "points": [
+        {
+          "x": -408,
+          "y": -183.4
+        },
+        {
+          "x": -408,
+          "y": 231.38
+        }
+      ]
+    },
+    {
+      "id": "w2",
+      "from": {
+        "partId": "relay2",
+        "pin": "VCC"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "3V3.3"
+      },
+      "color": "#d92b2b",
+      "points": [
+        {
+          "x": -64,
+          "y": -118.6
+        },
+        {
+          "x": -64,
+          "y": 231.38
+        }
+      ]
+    },
+    {
+      "id": "w3",
+      "from": {
+        "partId": "dht1",
+        "pin": "VCC"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "3V3.3"
+      },
+      "color": "#d92b2b",
+      "points": [
+        {
+          "x": -520,
+          "y": -58.4
+        },
+        {
+          "x": -520,
+          "y": 360
+        },
+        {
+          "x": -296,
+          "y": 360
+        },
+        {
+          "x": -296,
+          "y": 224
+        },
+        {
+          "x": -336.52,
+          "y": 224
+        }
+      ]
+    },
+    {
+      "id": "w4",
+      "from": {
+        "partId": "dht1",
+        "pin": "GND"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "GND.3"
+      },
+      "color": "#1c1c1c",
+      "points": [
+        {
+          "x": -424,
+          "y": -77.6
+        },
+        {
+          "x": -424,
+          "y": 231.38
+        }
+      ]
+    },
+    {
+      "id": "w5",
+      "from": {
+        "partId": "soil1",
+        "pin": "VCC"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "D0"
+      },
+      "color": "#d92b2b",
+      "points": [
+        {
+          "x": -120.4,
+          "y": 40
+        },
+        {
+          "x": -470.93,
+          "y": 40
+        }
+      ]
+    },
+    {
+      "id": "w6",
+      "from": {
+        "partId": "soil1",
+        "pin": "GND"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "GND.3"
+      },
+      "color": "#1c1c1c",
+      "points": [
+        {
+          "x": -110.8,
+          "y": 48
+        },
+        {
+          "x": -413.32,
+          "y": 48
+        }
+      ]
+    },
+    {
+      "id": "w9",
+      "from": {
+        "partId": "nodemcu",
+        "pin": "D6"
+      },
+      "to": {
+        "partId": "ldr1",
+        "pin": "VCC"
+      },
+      "color": "#d92b2b",
+      "points": [
+        {
+          "x": -394.12,
+          "y": -226
+        }
+      ]
+    },
+    {
+      "id": "w10",
+      "from": {
+        "partId": "ldr1",
+        "pin": "AO"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "A0"
+      },
+      "color": "#1f9d48",
+      "points": [
+        {
+          "x": -504,
+          "y": -196.5
+        },
+        {
+          "x": -504,
+          "y": 344.43
+        }
+      ]
+    },
+    {
+      "id": "w12",
+      "from": {
+        "partId": "ldr1",
+        "pin": "GND"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "GND.2"
+      },
+      "color": "#1c1c1c",
+      "points": [
+        {
+          "x": -510,
+          "y": 352
+        },
+        {
+          "x": -346.12,
+          "y": 352
+        }
+      ]
+    },
+    {
+      "id": "w13",
+      "from": {
+        "partId": "dht1",
+        "pin": "DATA"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "D3"
+      },
+      "color": "#1f9d48",
+      "points": [
+        {
+          "x": -442.13,
+          "y": -68
+        }
+      ]
+    },
+    {
+      "id": "w14",
+      "from": {
+        "partId": "relay2",
+        "pin": "IN1"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "D5"
+      },
+      "color": "#1f9d48",
+      "points": [
+        {
+          "x": -403.72,
+          "y": -170.44
+        }
+      ]
+    },
+    {
+      "id": "w15",
+      "from": {
+        "partId": "relay2",
+        "pin": "IN2"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "D7"
+      },
+      "color": "#1f9d48",
+      "points": [
+        {
+          "x": -384.52,
+          "y": -157.48
+        }
+      ]
+    },
+    {
+      "id": "w27",
+      "from": {
+        "partId": "relay2",
+        "pin": "IN3"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "D4"
+      },
+      "color": "#1f9d48",
+      "points": [
+        {
+          "x": -432.53,
+          "y": -144.52
+        }
+      ]
+    },
+    {
+      "id": "w17",
+      "from": {
+        "partId": "lcd2",
+        "pin": "SDA"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "D2"
+      },
+      "color": "#1f9d48",
+      "points": [
+        {
+          "x": -451.73,
+          "y": -392
+        }
+      ]
+    },
+    {
+      "id": "w18",
+      "from": {
+        "partId": "lcd2",
+        "pin": "VCC"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "3V3.3"
+      },
+      "color": "#d92b2b",
+      "points": [
+        {
+          "x": -346.12,
+          "y": -401.5
+        },
+        {
+          "x": -346.12,
+          "y": 231.38
+        }
+      ]
+    },
+    {
+      "id": "w19",
+      "from": {
+        "partId": "lcd2",
+        "pin": "GND"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "GND.4"
+      },
+      "color": "#1c1c1c",
+      "points": [
+        {
+          "x": -352,
+          "y": -411
+        },
+        {
+          "x": -352,
+          "y": 231.38
+        }
+      ]
+    },
+    {
+      "id": "w20",
+      "from": {
+        "partId": "lcd2",
+        "pin": "SCL"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "D1"
+      },
+      "color": "#1f9d48",
+      "points": [
+        {
+          "x": -461.33,
+          "y": -382.5
+        }
+      ]
+    },
+    {
+      "id": "w7",
+      "from": {
+        "partId": "soil1",
+        "pin": "DO"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "D8"
+      },
+      "color": "#8e44d6",
+      "points": [
+        {
+          "x": -374.92,
+          "y": 58
+        }
+      ]
+    },
+    {
+      "id": "w8",
+      "from": {
+        "partId": "soil1",
+        "pin": "AO"
+      },
+      "to": {
+        "partId": "nodemcu",
+        "pin": "A0"
+      },
+      "color": "#1f9d48",
+      "points": [
+        {
+          "x": -101.2,
+          "y": 58
+        },
+        {
+          "x": -101.2,
+          "y": 64
+        },
+        {
+          "x": -304,
+          "y": 64
+        },
+        {
+          "x": -304,
+          "y": 344.43
+        }
+      ]
+    },
+    {
+      "id": "w25",
+      "from": {
+        "partId": "ac1",
+        "pin": "L"
+      },
+      "to": {
+        "partId": "relay2",
+        "pin": "COM2"
+      },
+      "color": "#8b5a2b",
+      "points": [
+        {
+          "x": 235.5,
+          "y": -203.8
+        }
+      ]
+    },
+    {
+      "id": "w22",
+      "from": {
+        "partId": "ac1",
+        "pin": "N"
+      },
+      "to": {
+        "partId": "lamp1",
+        "pin": "N"
+      },
+      "color": "#1e6fe8",
+      "points": [
+        {
+          "x": 483.6,
+          "y": -306.8
+        }
+      ]
+    },
+    {
+      "id": "w23",
+      "from": {
+        "partId": "relay2",
+        "pin": "NO2"
+      },
+      "to": {
+        "partId": "lamp1",
+        "pin": "L"
+      },
+      "color": "#8b5a2b",
+      "points": [
+        {
+          "x": 576,
+          "y": -164.5
+        },
+        {
+          "x": 576,
+          "y": -361.2
+        }
+      ]
+    },
+    {
+      "id": "w16",
+      "from": {
+        "partId": "ac1",
+        "pin": "L"
+      },
+      "to": {
+        "partId": "relay2",
+        "pin": "COM1"
+      },
+      "color": "#8b5a2b",
+      "points": [
+        {
+          "x": 435.6,
+          "y": -244.15
+        }
+      ]
+    },
+    {
+      "id": "w24",
+      "from": {
+        "partId": "relay2",
+        "pin": "NO1"
+      },
+      "to": {
+        "partId": "fan1",
+        "pin": "L"
+      },
+      "color": "#8b5a2b",
+      "points": [
+        {
+          "x": 334,
+          "y": -226.6
+        }
+      ]
+    },
+    {
+      "id": "w26",
+      "from": {
+        "partId": "fan1",
+        "pin": "N"
+      },
+      "to": {
+        "partId": "ac1",
+        "pin": "N"
+      },
+      "color": "#1e6fe8",
+      "points": [
+        {
+          "x": 398,
+          "y": -248
+        },
+        {
+          "x": 480,
+          "y": -248
+        },
+        {
+          "x": 480,
+          "y": -203.8
+        }
+      ]
+    },
+    {
+      "id": "w28",
+      "from": {
+        "partId": "adp1",
+        "pin": "+"
+      },
+      "to": {
+        "partId": "relay2",
+        "pin": "COM3"
+      },
+      "color": "#d92b2b",
+      "points": [
+        {
+          "x": 767,
+          "y": 208
+        },
+        {
+          "x": 235.5,
+          "y": 208
+        }
+      ]
+    },
+    {
+      "id": "w29",
+      "from": {
+        "partId": "relay2",
+        "pin": "NO3"
+      },
+      "to": {
+        "partId": "pump1",
+        "pin": "+"
+      },
+      "color": "#d92b2b",
+      "points": [
+        {
+          "x": 328,
+          "y": -102.4
+        },
+        {
+          "x": 328,
+          "y": 240
+        },
+        {
+          "x": 977,
+          "y": 240
+        }
+      ]
+    },
+    {
+      "id": "w30",
+      "from": {
+        "partId": "adp1",
+        "pin": "-"
+      },
+      "to": {
+        "partId": "pump1",
+        "pin": "-"
+      },
+      "color": "#1c1c1c",
+      "points": [
+        {
+          "x": 968,
+          "y": 333
+        },
+        {
+          "x": 968,
+          "y": 398.6
+        }
+      ]
+    },
+    {
+      "id": "w31",
+      "from": {
+        "partId": "d1",
+        "pin": "C"
+      },
+      "to": {
+        "partId": "pump1",
+        "pin": "+"
+      },
+      "color": "#d92b2b",
+      "points": [
+        {
+          "x": 775,
+          "y": 141
+        },
+        {
+          "x": 977,
+          "y": 240
+        }
+      ]
+    },
+    {
+      "id": "w32",
+      "from": {
+        "partId": "d1",
+        "pin": "A"
+      },
+      "to": {
+        "partId": "pump1",
+        "pin": "-"
+      },
+      "color": "#1c1c1c",
+      "points": [
+        {
+          "x": 715,
+          "y": 141
+        },
+        {
+          "x": 968,
+          "y": 333
+        }
+      ]
+    }
+  ]
+}
