@@ -1,0 +1,306 @@
+{
+  "version": 1,
+  "editor": "circzy",
+  "board": "nodemcu",
+  "parts": [
+    {
+      "id": "nodemcu",
+      "type": "nodemcu-v3",
+      "x": 0,
+      "y": 0,
+      "rotate": 0,
+      "flip": false,
+      "color": "",
+      "value": "",
+      "level": 0
+    },
+    {
+      "id": "sonar1",
+      "type": "hc-sr04",
+      "x": 161,
+      "y": -169,
+      "rotate": 0,
+      "flip": false,
+      "color": "",
+      "value": "",
+      "level": 0
+    },
+    {
+      "id": "servo1",
+      "type": "servo",
+      "x": -83,
+      "y": 299,
+      "rotate": 90,
+      "flip": false,
+      "color": "",
+      "value": "",
+      "level": 0
+    },
+    {
+      "id": "bz1",
+      "type": "buzzer",
+      "x": 452,
+      "y": 0,
+      "rotate": 90,
+      "flip": false,
+      "color": "",
+      "value": "",
+      "level": 0
+    },
+    {
+      "id": "led1",
+      "type": "led",
+      "x": 481,
+      "y": 126,
+      "rotate": 90,
+      "flip": true,
+      "color": "red",
+      "value": "",
+      "level": 0
+    }
+  ],
+  "wires": [
+    {
+      "id": "w_sonar_trig",
+      "from": {
+        "partId": "nodemcu",
+        "pin": "D1"
+      },
+      "to": {
+        "partId": "sonar1",
+        "pin": "TRIG"
+      },
+      "color": "#1f9d48",
+      "points": [
+        {
+          "x": 242.3,
+          "y": 35.91
+        }
+      ]
+    },
+    {
+      "id": "w_sonar_echo",
+      "from": {
+        "partId": "nodemcu",
+        "pin": "D2"
+      },
+      "to": {
+        "partId": "sonar1",
+        "pin": "ECHO"
+      },
+      "color": "#1f9d48",
+      "points": [
+        {
+          "x": 252.3,
+          "y": 45.51
+        }
+      ]
+    },
+    {
+      "id": "w_sonar_vcc",
+      "from": {
+        "partId": "nodemcu",
+        "pin": "3V3.1"
+      },
+      "to": {
+        "partId": "sonar1",
+        "pin": "VCC"
+      },
+      "color": "#d92b2b",
+      "points": [
+        {
+          "x": -24,
+          "y": 122.32
+        },
+        {
+          "x": -24,
+          "y": -60.5
+        }
+      ]
+    },
+    {
+      "id": "w_sonar_gnd",
+      "from": {
+        "partId": "nodemcu",
+        "pin": "GND.1"
+      },
+      "to": {
+        "partId": "sonar1",
+        "pin": "GND"
+      },
+      "color": "#1c1c1c",
+      "points": [
+        {
+          "x": -8.59,
+          "y": -56
+        },
+        {
+          "x": 262.3,
+          "y": -56
+        }
+      ]
+    },
+    {
+      "id": "w_servo_pwm",
+      "from": {
+        "partId": "nodemcu",
+        "pin": "D5"
+      },
+      "to": {
+        "partId": "servo1",
+        "pin": "PWM"
+      },
+      "color": "#f59e0b",
+      "points": [
+        {
+          "x": 112,
+          "y": 93.52
+        },
+        {
+          "x": 112,
+          "y": 248
+        },
+        {
+          "x": -7.19,
+          "y": 248
+        }
+      ]
+    },
+    {
+      "id": "w_servo_vcc",
+      "from": {
+        "partId": "nodemcu",
+        "pin": "VIN"
+      },
+      "to": {
+        "partId": "servo1",
+        "pin": "V+"
+      },
+      "color": "#d92b2b",
+      "points": [
+        {
+          "x": -8.59,
+          "y": 256
+        },
+        {
+          "x": 2.31,
+          "y": 256
+        }
+      ]
+    },
+    {
+      "id": "w_servo_gnd",
+      "from": {
+        "partId": "nodemcu",
+        "pin": "GND.2"
+      },
+      "to": {
+        "partId": "servo1",
+        "pin": "GND"
+      },
+      "color": "#1c1c1c",
+      "points": [
+        {
+          "x": -16,
+          "y": 151.12
+        },
+        {
+          "x": -16,
+          "y": 264
+        },
+        {
+          "x": 8,
+          "y": 264
+        },
+        {
+          "x": 8,
+          "y": 259.73
+        }
+      ]
+    },
+    {
+      "id": "w_buzzer_signal",
+      "from": {
+        "partId": "nodemcu",
+        "pin": "D6"
+      },
+      "to": {
+        "partId": "bz1",
+        "pin": "1"
+      },
+      "color": "#1f9d48",
+      "points": [
+        {
+          "x": 433.29,
+          "y": 103.12
+        }
+      ]
+    },
+    {
+      "id": "w_buzzer_gnd",
+      "from": {
+        "partId": "nodemcu",
+        "pin": "GND.3"
+      },
+      "to": {
+        "partId": "bz1",
+        "pin": "2"
+      },
+      "color": "#1c1c1c",
+      "points": [
+        {
+          "x": 424,
+          "y": 83.92
+        },
+        {
+          "x": 424,
+          "y": 41.29
+        }
+      ]
+    },
+    {
+      "id": "w_led_anode",
+      "from": {
+        "partId": "nodemcu",
+        "pin": "D7"
+      },
+      "to": {
+        "partId": "led1",
+        "pin": "A"
+      },
+      "color": "#d92b2b",
+      "points": [
+        {
+          "x": 192,
+          "y": 112.72
+        },
+        {
+          "x": 192,
+          "y": 146
+        }
+      ]
+    },
+    {
+      "id": "w_led_cathode",
+      "from": {
+        "partId": "nodemcu",
+        "pin": "GND.4"
+      },
+      "to": {
+        "partId": "led1",
+        "pin": "C"
+      },
+      "color": "#1c1c1c",
+      "points": [
+        {
+          "x": 464,
+          "y": 151.12
+        },
+        {
+          "x": 464,
+          "y": 156
+        }
+      ]
+    }
+  ]
+}
